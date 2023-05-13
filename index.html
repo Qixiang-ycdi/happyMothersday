@@ -5,6 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript">
+        var audioTag = document.createElement('audio');
+        if (!(!!(audioTag.canPlayType) && ("no" != audioTag.canPlayType("audio/mpeg")) && ("" != audioTag.canPlayType("audio/mpeg")))) {
+            AudioPlayer.embed("audioplayer_1", {soundFile: "img/zdan.mp3", transparentpagebg: "yes"});
+            $( '#audioplayer').hide();
+     }
+        else 
+        {
+           $( '#audioplayer' ).audioPlayer();
+        }
+</script>
   <title>母亲节快乐!!! :)</title>
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
@@ -12,7 +23,11 @@
 </head>
 
 <body>
-  <embed height="50" width="100" src="img/zdan.mp3" autostart="true">
+  <p id="audioplayer_1"></p>
+    <audio id="audioplayer" preload="auto" controls style="width: 100%;">
+        <source src="img/zdan.mp3" type="audio/mp3">
+        <!-- 这里SRC中的就是音乐文件的名字，改成你电脑上的。音乐文件要和html文件在同一目录下-->
+    </audio>
   <div class="container">
     <div class="one">
       <h1 class="one">
